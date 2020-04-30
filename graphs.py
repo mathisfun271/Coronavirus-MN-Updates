@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-dataAr = open("/Users/nathanmihm/Math Graphics/covid/graphData.txt","r").read().split("\n")
+dataAr = open("covid/graphData.txt","r").read().split("\n")
 
 x = []
 deaths = []
@@ -40,7 +40,7 @@ ax.legend(loc='upper left')
 ax.set_xlabel('Days since index case, March 6th')
 ax.set_ylabel('confirmed count')
 plt.title('Linear Graph')
-fig.savefig('/Users/nathanmihm/Math Graphics/covid/linGraph.png')
+fig.savefig('covid/linGraph.png')
 
 labels.append("Tests")
 fig, ax = plt.subplots() #Logarithmic Render
@@ -50,7 +50,7 @@ plt.title('Logarithmic Graph')
 ax.set_yscale('log')
 ax.set_ylabel('confirmed count')
 ax.set_xlabel('Days since index case, March 6th')
-fig.savefig('/Users/nathanmihm/Math Graphics/covid/logGraph.png')
+fig.savefig('covid/logGraph.png')
 
 fig, ax = plt.subplots() #Logarithmic Render
 ax.plot(posP, label= "% Positive Tests")
@@ -59,6 +59,6 @@ ax.legend(loc='upper left')
 ax.set_xlabel('Days since index case, March 6th')
 ax.set_ylabel('Percentage')
 plt.title('Percentage Graph')
-fig.savefig('/Users/nathanmihm/Math Graphics/covid/percentGraph.png')
+fig.savefig('covid/percentGraph.png')
 
 
