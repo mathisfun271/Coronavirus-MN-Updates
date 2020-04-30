@@ -14,7 +14,7 @@ d = []
 for x in range(0,87):
     d.append(x+1)
 
-dataStr = open("/Users/nathanmihm/Math Graphics/covid/County Data.txt","r").read().replace(",","").split("\n")
+dataStr = open("covid/County Data.txt","r").read().replace(",","").split("\n")
 data = []
 for el in dataStr:
     data.append(el.split("\t"))
@@ -108,7 +108,7 @@ for k in range(0,3):
     draw.line([10+650*k,1210,640+650*k,1210],"#000000",width = 4)
     draw.line([640+650*k,10,640+650*k,1210],"#000000",width = 4)
 
-pic.save('/Users/nathanmihm/Math Graphics/covid/Table.png')
+pic.save('covid/Table.png')
 
 
 
