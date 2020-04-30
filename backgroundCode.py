@@ -14,7 +14,7 @@ bold = ImageFont.truetype('/System/Library/Fonts/Supplemental/HelveticaNeue.ttc'
 pic = Image.new("RGBA",[1950,2440],"#ffffff")
 draw = ImageDraw.Draw(pic, 'RGBA')
 
-backImage = Image.open('/Users/nathanmihm/Math Graphics/covid/CovidBackgroundClear.png')
+backImage = Image.open('covid/CovidBackgroundClear.png')
 
 datas = backImage.getdata()
 newData = []
@@ -33,13 +33,13 @@ draw.text((505,70), 'Daily Minnesota SARS-Coronavirus-2 Infographic', font=title
 draw.text((10,40), 'Posted on:', font=fnt, fill="#000000")
 draw.text((210,15), 'r/CoronavirusMN', font=fnt, fill="#000000")
 draw.text((210,65), 'r/minnesota', font=fnt, fill="#000000")
-MinnesotaLogo = Image.open('/Users/nathanmihm/Math Graphics/covid/MinnesotaLogo.png').resize((50,50))
-CovidMN = Image.open('/Users/nathanmihm/Math Graphics/covid/CoronavirusMN.png').resize((50,50))
+MinnesotaLogo = Image.open('covid/MinnesotaLogo.png').resize((50,50))
+CovidMN = Image.open('covid/CoronavirusMN.png').resize((50,50))
 pic.paste(CovidMN, (150,5), CovidMN)
 pic.paste(MinnesotaLogo, (150,55), MinnesotaLogo)
 
 draw.text((1760,20), 'u/mathisfun271', font=fnt, fill="#000000")
-myLogo = Image.open('/Users/nathanmihm/Math Graphics/covid/myLogo.png').resize((50,50))
+myLogo = Image.open('covid/myLogo.png').resize((50,50))
 pic.paste(myLogo, (1700,10), myLogo)
 draw.text((1435,20), 'Created in Python by:', font=fnt, fill="#000000")
 
@@ -64,6 +64,6 @@ draw.text((190,200),'General Infomation',font=bold,fill="#000000")
 draw.text((177,500),'Recovery Infomation',font=bold,fill="#000000")
 draw.text((185,800),'Hospital Infomation',font=bold,fill="#000000")
 
-pic.save('/Users/nathanmihm/Math Graphics/covid/Background.png')
+pic.save('covid/Background.png')
 
 print(time()-st)
