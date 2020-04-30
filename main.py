@@ -1,5 +1,5 @@
 # main program
-mainDataAr = open("/Users/nathanmihm/Math Graphics/covid/mainData.txt","r").read().split("------------\n\n\n")[-1].split("\n\n")
+mainDataAr = open("covid/mainData.txt","r").read().split("------------\n\n\n")[-1].split("\n\n")
 
 
 from PIL import Image, ImageDraw, ImageFont
@@ -33,7 +33,7 @@ def wrapText(pos,text,font,fill):
 
 
 
-pic = Image.open('/Users/nathanmihm/Math Graphics/covid/Background.png')
+pic = Image.open('covid/Background.png')
 draw = ImageDraw.Draw(pic, 'RGBA')
 
 wrapText((10,250,640,500),mainDataAr[0],fnt,"#000000")
@@ -41,7 +41,7 @@ wrapText((10,550,640,800),mainDataAr[1],fnt,"#000000")
 wrapText((10,850,640,1100),mainDataAr[2],fnt,"#000000")
 
 
-chart = Image.open('/Users/nathanmihm/Math Graphics/covid/Table.png')
+chart = Image.open('covid/Table.png')
 pic.paste(chart, (0, 1190), chart)
 
 date = datetime.datetime.now()#Timestamp Generation
@@ -68,15 +68,15 @@ def trans(img):
             newData.append(item)
     img.putdata(newData)
 
-linGraph = Image.open('/Users/nathanmihm/Math Graphics/covid/linGraph.png').convert("RGBA")
+linGraph = Image.open('covid/linGraph.png').convert("RGBA")
 trans(linGraph)
 pic.paste(linGraph, (660, 170), linGraph)
 
-logGraph = Image.open('/Users/nathanmihm/Math Graphics/covid/logGraph.png').convert("RGBA")
+logGraph = Image.open('covid/logGraph.png').convert("RGBA")
 trans(logGraph)
 pic.paste(logGraph, (1310, 170), logGraph)
 
-pGraph = Image.open('/Users/nathanmihm/Math Graphics/covid/percentGraph.png').convert("RGBA")
+pGraph = Image.open('covid/percentGraph.png').convert("RGBA")
 trans(pGraph)
 pic.paste(pGraph, (660, 630), pGraph)
 
@@ -85,5 +85,5 @@ pic.paste(pGraph, (660, 630), pGraph)
 
 
 fileName = "%d|%d Update.png" % (date.month,date.day)
-pic.save('/Users/nathanmihm/Math Graphics/covid Updates/'+fileName)
+pic.save('covid Updates/'+fileName)
 
