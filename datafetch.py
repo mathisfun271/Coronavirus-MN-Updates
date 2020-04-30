@@ -26,11 +26,11 @@ def percent(num,den):
 #County Data (Hard)
 
 #clipboard?
-MDHtxt = open("/Users/nathanmihm/Math Graphics/covid/MDHcounty.txt","r").read().replace(",","").replace("Lake of the Woods","Lk of the Woods")
+MDHtxt = open("covid/MDHcounty.txt","r").read().replace(",","").replace("Lake of the Woods","Lk of the Woods")
 
-popTxt = open("/Users/nathanmihm/Math Graphics/covid/countyPop.txt","r").read().replace(",","")
+popTxt = open("covid/countyPop.txt","r").read().replace(",","")
 
-pcDataTxt = open("/Users/nathanmihm/Math Graphics/covid/county Data.txt","r").read()
+pcDataTxt = open("covid/county Data.txt","r").read()
 
 pcData = []
 for el in pcDataTxt.split("\n"):
@@ -89,17 +89,17 @@ popCountStr = str(popCount)
 popCountStr = popCountStr[0] + ',' + popCountStr[1:4] + ',' + popCountStr[4:]
 
 
-with open("/Users/nathanmihm/Math Graphics/covid/County Data.txt","w") as myfile:
+with open("covid/County Data.txt","w") as myfile:
     myfile.write(chartStr)
 
-with open("/Users/nathanmihm/Math Graphics/covid/mapData.csv","w") as myfile:
+with open("covid/mapData.csv","w") as myfile:
     myfile.write(csvStr)
 
 
 
 
 #Graph Data
-graphTxt = open("/Users/nathanmihm/Math Graphics/covid/graphData.txt","r")
+graphTxt = open("covid/graphData.txt","r")
 graphTxt = graphTxt.read()
 yest = graphTxt.split("\n")[-1].split("\t")[0]
 if yest != (date.today() - timedelta(days=1)).strftime('%m/%d'):
@@ -109,11 +109,11 @@ num = int(graphTxt.split("\n")[-1].split("\t")[1])+1
 now = date.today().strftime('%m/%d')
 newGraph = "\n%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s" % (now,num,cases,hosps,deaths,tests,percent(cases,tests),percent(deaths,cases))
 
-with open("/Users/nathanmihm/Math Graphics/covid/graphData.txt","a") as myfile:
+with open("covid/graphData.txt","a") as myfile:
     myfile.write(newGraph)
 
 #Main Data
-mainTxt = open("/Users/nathanmihm/Math Graphics/covid/maindata.txt","r").read()
+mainTxt = open("covid/maindata.txt","r").read()
 txtAr = mainTxt.split("\n\n\n")[2].split("\n")
 
 yest = mainTxt[:5]
@@ -163,7 +163,7 @@ fullStr = "%s\n\n%s\n\n%s\n\n%s" % (genStr,recovStr,hospStr,countyStr)
 
 output = '%s\n\n\n------------\n\n\n%s\n\n------------\n\n\n%s' % (now,chartStr,fullStr)
 
-with open("/Users/nathanmihm/Math Graphics/covid/maindata.txt","w") as myfile:
+with open("covid/maindata.txt","w") as myfile:
     myfile.write(output)
 
 
